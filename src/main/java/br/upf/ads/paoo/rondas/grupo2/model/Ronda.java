@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.lang.Float;
 import java.lang.Long;
 import java.util.Date;
+import java.util.List;
+
 import javax.persistence.*;
 
 /**
@@ -22,11 +24,30 @@ public class Ronda implements Serializable {
 	private Float latUltima;
 	private Float lonUltima;
 	private Date dataHoraUltima;
+	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	private List<Pessoa> vigilantes;
+	@ManyToOne
+	private Locomocao locomocao;
+	
+	
 	private static final long serialVersionUID = 1L;
 
 	public Ronda() {
 		super();
 	}   
+	
+	public Ronda (Long id, Date dataHoraInicio, Date dataHoraFim, Float latUltima, Float lonUltima, Date dataHoraUltima,
+			List<Pessoa> vigilantes, Locomocao locomocao) {
+		super();
+		this.id = id;
+		this.dataHoraInicio = dataHoraInicio;
+		this.dataHoraFim = dataHoraFim;
+		this.latUltima = latUltima;
+		this.lonUltima = lonUltima;
+		this.dataHoraUltima = dataHoraUltima;
+		this.vigilantes = vigilantes;
+		this.locomocao = locomocao;
+	}
 	public Long getId() {
 		return this.id;
 	}
@@ -68,6 +89,20 @@ public class Ronda implements Serializable {
 
 	public void setDataHoraUltima(Date dataHoraUltima) {
 		this.dataHoraUltima = dataHoraUltima;
+	}
+	public List<Pessoa> getVigilantes() {
+		return this.vigilantes;
+	}
+
+	public void setVigilantes(List<Pessoa> vigilantes) {
+		this.vigilantes = vigilantes;
+	}   
+	public Locomocao getLocomocao() {
+		return this.locomocao;
+	}
+
+	public void setLocomocao(Locomocao locomocao) {
+		this.locomocao = locomocao;
 	}
    
 }

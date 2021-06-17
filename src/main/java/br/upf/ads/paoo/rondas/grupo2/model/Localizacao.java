@@ -24,7 +24,14 @@ public class Localizacao implements Serializable {
 
 	public Localizacao() {
 		super();
-	}   
+	}
+	
+	public Localizacao(Long id, Date dataHora, Float lat, Float lon) {
+		this.id = id;
+		this.dataHora = dataHora;
+		this.lat = lat;
+		this.lon = lon;
+	}
 	public Long getId() {
 		return this.id;
 	}

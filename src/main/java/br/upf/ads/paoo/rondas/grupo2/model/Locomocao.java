@@ -23,6 +23,13 @@ public class Locomocao implements Serializable {
 	public Locomocao() {
 		super();
 	}   
+	
+	public Locomocao(Long id, String descricao, String placa) {
+		super();
+		this.id = id;
+		this.descricao = descricao;
+		this.placa = placa;
+	}
 	public Long getId() {
 		return this.id;
 	}

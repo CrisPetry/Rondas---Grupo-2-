@@ -1,7 +1,6 @@
 package br.upf.ads.paoo.rondas.grupo2.model;
 
 import java.io.Serializable;
-import java.lang.Long;
 import java.lang.String;
 import javax.persistence.*;
 
@@ -16,14 +15,27 @@ public class Usuario implements Serializable {
 	   
 	@Id
 	private Long id;
+	@Column(length=50, unique=true, nullable=false)
 	private String nome;
+	@Column(length=20, unique=true, nullable=false)
 	private String email;
+	@Column(length=50, nullable=false)
 	private String senha;
+	
 	private static final long serialVersionUID = 1L;
 
 	public Usuario() {
 		super();
 	}   
+	
+	public Usuario(Long id, String nome, String login, String senha) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.email = email;
+		this.senha = senha;
+		
+	}
 	public Long getId() {
 		return this.id;
 	}
