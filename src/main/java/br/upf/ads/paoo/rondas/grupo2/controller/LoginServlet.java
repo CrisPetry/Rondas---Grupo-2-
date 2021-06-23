@@ -23,18 +23,14 @@ public class LoginServlet extends HttpServlet {
      */
     public LoginServlet() {
         super();
-        // TODO Auto-generated constructor stub
+       
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
 		
 		EntityManager em = JpaUtil.getEntityManager();  
-		Query qry = em.createQuery("from Usuario where login = :login and senha = :senha"); 
-		qry.setParameter("login", request.getParameter("login")); 
+		Query qry = em.createQuery("from usuario where nome = :nome and senha = :senha"); 
+		qry.setParameter("nome", request.getParameter("nome")); 
 		qry.setParameter("senha", request.getParameter("senha")); 
 		Usuario usuarioLogado = null; 
 		try { 
@@ -46,7 +42,7 @@ public class LoginServlet extends HttpServlet {
 		   request.getRequestDispatcher("Login.jsp").forward(request, response);   
 		}else{ 
 		   request.getSession().setAttribute("usuarioLogado", usuarioLogado); 
-		   response.sendRedirect("Privada/Home/Home.jsp");  
+		   response.sendRedirect("Privada/Inicio/Inicio.jsp");  
 		} 		
 		
 	}
