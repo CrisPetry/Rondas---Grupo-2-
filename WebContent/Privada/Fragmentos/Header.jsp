@@ -6,21 +6,21 @@
 	<meta charset="ISO-8859-1">
 	<title>Grupo 2 Frotas</title>
 
-	<script src="../../resources/jquery/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="../../resources/jquery-confirm/jquery-confirm.min.css">
-    <script src="../../resources/jquery-confirm/jquery-confirm.min.js"></script> 	
+	<script src="../../Resources/jquery/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="../../Resources/jquery-confirm/jquery-confirm.min.css">
+    <script src="../../Resources/jquery-confirm/jquery-confirm.min.js"></script> 	
 
 	<link rel="stylesheet" href="../../resources/bootstrap/css/bootstrap.min.css">
-	<script src="../../resources/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../../Resources/bootstrap/js/bootstrap.min.js"></script>
 
-	<link href="../../resources/fontawesome/css/all.css" rel="stylesheet">
+	<link href="../../Resources/fontawesome/css/all.css" rel="stylesheet">
 
-	<link href="../../resources/smartmenus/css/sm-core-css.css" rel="stylesheet" type="text/css"/>
-	<link href="../../resources/smartmenus/css/sm-mint/sm-mint.css" rel="stylesheet" type="text/css" />	
+	<link href="../../Resources/smartmenus/css/sm-core-css.css" rel="stylesheet" type="text/css"/>
+	<link href="../../Resources/smartmenus/css/sm-mint/sm-mint.css" rel="stylesheet" type="text/css" />	
 	    
 
 	
-	<link href="../../resources/estilos.css" rel="stylesheet">
+	<link href="../../Resources/estilos.css" rel="stylesheet">
 	
 </head>
 <body>
@@ -54,7 +54,7 @@
 
 
 	<!-- SmartMenus jQuery plugin -->
-	<script type="text/javascript"	src="../../resources/smartmenus/jquery.smartmenus.js"></script>
+	<script type="text/javascript"	src="../../Resources/smartmenus/jquery.smartmenus.js"></script>
 	<!-- SmartMenus jQuery init -->
 	<script type="text/javascript">
 		$(function() {

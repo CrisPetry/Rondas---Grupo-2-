@@ -23,13 +23,17 @@ public class LoginServlet extends HttpServlet {
      */
     public LoginServlet() {
         super();
-       
+        // TODO Auto-generated constructor stub
     }
 
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 		
 		EntityManager em = JpaUtil.getEntityManager();  
-		Query qry = em.createQuery("from usuario where nome = :nome and senha = :senha"); 
+		Query qry = em.createQuery("from Usuario where nome = :nome and senha = :senha"); 
 		qry.setParameter("nome", request.getParameter("nome")); 
 		qry.setParameter("senha", request.getParameter("senha")); 
 		Usuario usuarioLogado = null; 

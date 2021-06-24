@@ -18,15 +18,15 @@
 
 	<div class="panel panel-default" style="width: 300px; margin: auto; margin-top: 15%;"> 
 	   <div class="panel-heading"> 
-	      <!-- cabeçalho do painel --> 
+	      
 	      <label>AUTENTICAÇÃO</label> 
 	      
 	      
 	   </div> 
 	   <div class="panel-body"> 
-	   <!-- corpo do painel --> 
+	   
 	      <label>Login</label>
-	      <input type="text" name="login" class="form-control">
+	      <input type="text" name="nome" class="form-control">
 
 	      <label>Senha</label>
 	      <input type="password" name="senha" class="form-control">
@@ -35,7 +35,7 @@
 	   
 	   </div> 
 	   <div class="panel-footer"> 
-	      <!-- rodapé do painel --> 
+	      
 	      <button type="submit">Login</button>   
 	      <br>
 	      

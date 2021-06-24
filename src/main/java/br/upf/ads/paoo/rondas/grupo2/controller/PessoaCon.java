@@ -1,4 +1,4 @@
-	package br.upf.ads.paoo.rondas.grupo2.controller;
+package br.upf.ads.paoo.rondas.grupo2.controller;
 
 import java.io.IOException;
 import java.util.List;
@@ -69,27 +69,26 @@ public class PessoaCon extends HttpServlet {
 	}
 	
 	private void gravarFoto(HttpServletRequest request, HttpServletResponse response) {
-		EntityManager em = JpaUtil.getEntityManager(); // pega a entitymanager para persistir
-		// ----------------------------------------------------------------------------------
-		em.getTransaction().begin(); 	// inicia a transação
+		EntityManager em = JpaUtil.getEntityManager(); 
+		
+		em.getTransaction().begin(); 	
 		Pessoa obj = em.find(Pessoa.class, Integer.parseInt(request.getParameter("id")));
 
-		// Vamos ver se veio o arquivo do form
+		
 		if (request.getParameter("foto") != null) {
 			String nomeArquivo = "Foto"+request.getParameter("id")+".jpg";
-			// pegar o caminho de contexto de execução da aplicação para a pasta uploads
+			
 			String caminho = getServletConfig().getServletContext().getRealPath("/") + "Privada/Pessoa/uploads";
-			// copiar arquivo de upload para a pasta
+			
 			Upload.copiarArquivo((HttpServletMultipartRequest) request, "foto", caminho, nomeArquivo);
 			
 			
-			// colocar no banco de dados
 			obj.setFoto( Upload.getBytesArquivo((HttpServletMultipartRequest) request, "foto") );
 			
 		}		
 		
 		em.merge(obj); 	
-		em.getTransaction().commit(); 	// commit na transação
+		em.getTransaction().commit(); 	
 		em.close();
 		listar(request, response);
 	}	
@@ -100,7 +99,7 @@ public class PessoaCon extends HttpServlet {
 	private void listar(HttpServletRequest request, HttpServletResponse response) {
 		try {
 			EntityManager em = JpaUtil.getEntityManager();
-			List<Pessoa> lista = em.createQuery("from Pessoa").getResultList(); // recuperamos as pessoas do BD
+			List<Pessoa> lista = em.createQuery("from pessoa").getResultList(); 
 			request.setAttribute("lista", lista);
 			em.close();
 			request.getRequestDispatcher("PessoaList.jsp").forward(request, response);
@@ -114,23 +113,23 @@ public class PessoaCon extends HttpServlet {
 	}
 
 	private void gravar(HttpServletRequest request, HttpServletResponse response) {
-		EntityManager em = JpaUtil.getEntityManager(); // pega a entitymanager para persistir
+		EntityManager em = JpaUtil.getEntityManager(); 
 		Pessoa p = new Pessoa(
 					Long.parseLong(request.getParameter("id")), 
 					request.getParameter("nome"));
 		// ----------------------------------------------------------------------------------
-		em.getTransaction().begin(); 	// inicia a transação
-		em.merge(p); 					// incluir ou alterar o objeto no BD
-		em.getTransaction().commit(); 	// commit na transação
+		em.getTransaction().begin(); 	
+		em.merge(p); 					
+		em.getTransaction().commit(); 	
 		em.close();
 		listar(request, response);
 	}
 
 	private void excluir(HttpServletRequest request, HttpServletResponse response) {
-		EntityManager em = JpaUtil.getEntityManager(); // pega a entitymanager para persistir
-		em.getTransaction().begin(); 	// inicia a transação
-		em.remove(em.find(Pessoa.class, Integer.parseInt(request.getParameter("excluir"))));	// excluir o objeto no BD
-		em.getTransaction().commit(); 	// commit na transação
+		EntityManager em = JpaUtil.getEntityManager(); 
+		em.getTransaction().begin(); 	
+		em.remove(em.find(Pessoa.class, Integer.parseInt(request.getParameter("excluir"))));	
+		em.getTransaction().commit(); 	
 		em.close();
 		listar(request, response);
 	}
@@ -157,11 +156,9 @@ public class PessoaCon extends HttpServlet {
 		} 		
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		doGet(request, response);
 	}
 

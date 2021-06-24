@@ -1,16 +1,7 @@
 package br.upf.ads.paoo.rondas.grupo2.util;
 
-/*
- * Upload.java
- *
- * To change this template, choose Tools | Template Manager
- * and open the template in the editor.
- */
-
-
 import net.iamvegan.multipartrequest.HttpServletMultipartRequest;
 import net.iamvegan.multipartrequest.MultipartFile;
-
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -130,12 +121,11 @@ public class Upload {
       try {
          MultipartFile multiFile = ((HttpServletMultipartRequest) request).getFileParameter(campo_html);
          InputStream in = multiFile.getInputStream();
-         return ((Object) in).readAllBytes();
+         return in.readAllBytes();
       } catch (Exception e) {
          e.printStackTrace();
          return null;
       }
    }   
-   
    
 }
