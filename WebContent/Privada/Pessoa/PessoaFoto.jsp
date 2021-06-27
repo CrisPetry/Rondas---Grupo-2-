@@ -29,29 +29,18 @@
 
 			<div class="row">
 				<div class="col-md-2">
-				
-					<label>Foto</label> 
-					
-					
-					<input type="file" name="foto"/><br>
-					
-					
-					<div id="areaImagem">
-						<img name="imagem" id="imagem" width="200" height="200"
-							 src="uploads/Foto${obj.id}.jpg" />
-					</div>
+
+					<label>Foto</label> <input type="file" name="foto" /><br>
+
+
+					<div id="areaImagem"></div>
 
 					<br>
-					
+
 					<div id="areaImagemBD">
 						<img name="imagemBD" id="imagemBD" width="300" height="300"
-							 src="data:image/jpg;base64,${obj.fotoBase64}" />
+							src="data:image/jpg;base64,${obj.fotoBase64}" />
 					</div>
-
-
-
-
-
 
 				</div>
 			</div>

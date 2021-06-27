@@ -4,16 +4,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Grupo 2</title>
 </head>
 <body>
 	<jsp:include page="../Fragmentos/Header.jsp"></jsp:include>
 	
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	Bem vindo...
+
 </body>
 </html>

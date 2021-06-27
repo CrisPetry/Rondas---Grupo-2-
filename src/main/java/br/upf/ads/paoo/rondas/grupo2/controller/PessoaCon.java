@@ -15,9 +15,6 @@ import br.upf.ads.paoo.rondas.grupo2.model.Pessoa;
 import br.upf.ads.paoo.rondas.grupo2.util.Upload;
 import net.iamvegan.multipartrequest.HttpServletMultipartRequest;
 
-/**
- * Servlet implementation class PessoaCon
- */
 @WebServlet("/Privada/Pessoa/PessoaCon")
 public class PessoaCon extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -59,7 +56,7 @@ public class PessoaCon extends HttpServlet {
 	private void alterarFoto(HttpServletRequest request, HttpServletResponse response) {
 		try {
 			EntityManager em = JpaUtil.getEntityManager();
-			Pessoa obj = em.find(Pessoa.class, Integer.parseInt(request.getParameter("alterarFoto")));
+			Pessoa obj = em.find(Pessoa.class, Long.parseLong(request.getParameter("alterarFoto")));
 			request.setAttribute("obj", obj);
 			em.close();
 			request.getRequestDispatcher("PessoaFoto.jsp").forward(request, response);
@@ -72,7 +69,7 @@ public class PessoaCon extends HttpServlet {
 		EntityManager em = JpaUtil.getEntityManager(); 
 		
 		em.getTransaction().begin(); 	
-		Pessoa obj = em.find(Pessoa.class, Integer.parseInt(request.getParameter("id")));
+		Pessoa obj = em.find(Pessoa.class, Long.parseLong(request.getParameter("id")));
 
 		
 		if (request.getParameter("foto") != null) {
@@ -99,7 +96,7 @@ public class PessoaCon extends HttpServlet {
 	private void listar(HttpServletRequest request, HttpServletResponse response) {
 		try {
 			EntityManager em = JpaUtil.getEntityManager();
-			List<Pessoa> lista = em.createQuery("from pessoa").getResultList(); 
+			List<Pessoa> lista = em.createQuery("from Pessoa").getResultList(); 
 			request.setAttribute("lista", lista);
 			em.close();
 			request.getRequestDispatcher("PessoaList.jsp").forward(request, response);
@@ -116,8 +113,12 @@ public class PessoaCon extends HttpServlet {
 		EntityManager em = JpaUtil.getEntityManager(); 
 		Pessoa p = new Pessoa(
 					Long.parseLong(request.getParameter("id")), 
-					request.getParameter("nome"));
-		// ----------------------------------------------------------------------------------
+					request.getParameter("nome"),
+					request.getParameter("loginApp"),
+					request.getParameter("senha")
+					);
+					
+		
 		em.getTransaction().begin(); 	
 		em.merge(p); 					
 		em.getTransaction().commit(); 	
@@ -128,7 +129,7 @@ public class PessoaCon extends HttpServlet {
 	private void excluir(HttpServletRequest request, HttpServletResponse response) {
 		EntityManager em = JpaUtil.getEntityManager(); 
 		em.getTransaction().begin(); 	
-		em.remove(em.find(Pessoa.class, Integer.parseInt(request.getParameter("excluir"))));	
+		em.remove(em.find(Pessoa.class, Long.parseLong(request.getParameter("excluir"))));	
 		em.getTransaction().commit(); 	
 		em.close();
 		listar(request, response);
@@ -137,7 +138,7 @@ public class PessoaCon extends HttpServlet {
 	private void alterar(HttpServletRequest request, HttpServletResponse response) {
 		try {
 			EntityManager em = JpaUtil.getEntityManager();
-			Pessoa obj = em.find(Pessoa.class, Integer.parseInt(request.getParameter("alterar")));
+			Pessoa obj = em.find(Pessoa.class, Long.parseLong(request.getParameter("alterar")));
 			request.setAttribute("obj", obj);
 			em.close();
 			request.getRequestDispatcher("PessoaForm.jsp").forward(request, response);

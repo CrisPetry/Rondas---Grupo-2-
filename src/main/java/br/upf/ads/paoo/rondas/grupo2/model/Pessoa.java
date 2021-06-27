@@ -37,10 +37,12 @@ public class Pessoa implements Serializable {
 		this.foto = foto;
 	}
 	
-	public Pessoa(Long id, String nome) {
+	public Pessoa(Long id, String nome, String loginApp, String senha) {
 		super();
 		this.id = id;
 		this.nome = nome;
+		this.loginApp = loginApp;
+		this.senha = senha;
 	}
 	
 	

@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="ISO-8859-1">
-	<title>Grupo 2 Frotas</title>
+	<title>GRUPO 2</title>
 
 	<script src="../../Resources/jquery/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="../../Resources/jquery-confirm/jquery-confirm.min.css">
@@ -22,10 +22,24 @@
 	
 	<link href="../../Resources/estilos.css" rel="stylesheet">
 	
+	<style>
+		body{
+		background-color: #dbf4fc;
+		}
+		
+		h2{
+		float: right;
+		font-size: 1rem !important;
+		}
+		
+		h3{
+		text-align: center;
+		}
+	</style>
 </head>
 <body>
-    <h3>Aplicação de aula...</h3>
-    <h2>${sessionScope.usuarioLogado.nome}</h2>
+    <h3>Painel Administrativo</h3>
+    <h2><i class='fa fa-user'>	${sessionScope.usuarioLogado.nome} </i> </h2>
     
 	<nav class="main-nav">
 	  <!-- Sample menu definition -->
@@ -48,7 +62,7 @@
 	        </li>
 	      </ul>
 	    </li>
-	    <li><a href="#">Sair</a></li>
+	    <li> <a href= "${pageContext.request.contextPath}/Login.jsp">Sair</a></li>
 	  </ul>
 	</nav>
 
