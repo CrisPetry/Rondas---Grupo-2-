@@ -108,7 +108,7 @@ public class OcorrenciaCon extends HttpServlet {
 		EntityManager em = JpaUtil.getEntityManager();
 		Date d1 = null;
 		try {
-			d1 = new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("dataHora"));
+			d1 = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").parse(request.getParameter("dataHora"));
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
