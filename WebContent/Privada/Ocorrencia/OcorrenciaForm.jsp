@@ -23,9 +23,9 @@ fieldset {
 </head>
 <body>
 	<jsp:include page="../Fragmentos/Header.jsp"></jsp:include>
-	<form action="LocalizacaoCon" method="post">
+	<form action="OcorrenciaCon" method="post">
 		<fieldset>
-			<legend>Adicionar Localização:</legend>
+			<legend>Adicionar Ocorrência:</legend>
 
 			<div class="row">
 				<div class="col-md-2">
@@ -45,12 +45,28 @@ fieldset {
 
 			<div class="row">
 				<div class="col-md-5">
+					<label>Título</label> <input class="form-control" type="text"
+						name="titulo" value="${obj.titulo}">
+				</div>
+			</div>
+			<br>
+
+			<div class="row">
+				<div class="col-md-5">
+					<label>Descrição</label> <input class="form-control" type="text"
+						name="descricao" value="${obj.descricao}">
+				</div>
+			</div>
+			<br>
+
+			<div class="row">
+				<div class="col-md-5">
 					<label>Latitude</label> <input class="form-control" type="number"
 						name="lat" value="${obj.lat}">
 				</div>
 			</div>
 			<br>
-			
+
 			<div class="row">
 				<div class="col-md-5">
 					<label>Longitude</label> <input class="form-control" type="number"
@@ -58,7 +74,7 @@ fieldset {
 				</div>
 			</div>
 			<br>
-			
+
 			<button class="fas fa-save" type="submit" name="gravar">
 				Gravar</button>
 			<button class="fas fa-trash" type="submit" name="cancelar">
