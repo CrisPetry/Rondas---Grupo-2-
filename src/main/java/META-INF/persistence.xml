@@ -8,9 +8,9 @@
 		<class>br.upf.ads.paoo.rondas.grupo2.model.Ronda</class>
 		<class>br.upf.ads.paoo.rondas.grupo2.model.Usuario</class>
 		<properties>
-			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/RondasGrupo2"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/rondasgrupo2"/>
 			<property name="javax.persistence.jdbc.user" value="postgres"/>
-			<property name="javax.persistence.jdbc.password" value="masterkey"/>
+			<property name="javax.persistence.jdbc.password" value="13524500"/>
 			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
 			<property name="javax.persistence.schema-generation.database.action" value="create"/>
 		</properties>
