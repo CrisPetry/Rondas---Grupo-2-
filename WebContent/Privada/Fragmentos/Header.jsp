@@ -52,14 +52,17 @@
 	        <li><a href="../Usuario/UsuarioCon">Usuarios</a></li>
 	        <li><a href="../Localizacao/LocalizacaoCon">Localizações</a></li>
 	        <li><a href="../Ocorrencia/OcorrenciaCon">Ocorrências</a></li>
-	        <li><a href="../Locomocao/LocomocaoCon">Locomoções</a></li>
-	        
-	        <li><a href="#">Básicos</a>
-	          <ul>
-	            <li><a href="#">Estado ...</a></li>
-	            <li><a href="http://vadikom.com/projects/">Projects</a></li>
-	          </ul>
-	        </li>
+	        <li><a href="../Locomocao/LocomocaoCon">Locomoções</a>
+	      </ul>
+	    </li>
+	    	    <li><a href="#">Relatórios</a>
+	      <ul>
+	        <li><a href="../relatorios/RelRonda" target="_blank">Relatório de Rondas</a></li>
+	        <li><a href="../relatorios/RelPessoa" target="_blank">Relatório de Pessoas</a></li>
+	        <li><a href="../relatorios/RelUsuario" target="_blank">Relatório de Usuarios</a></li>
+	        <li><a href="../relatorios/RelLocalizacao" target="_blank">Relatório de Localizações</a></li>
+	        <li><a href="../relatorios/RelOcorrencia" target="_blank">Relatório de Ocorrências</a></li>
+	        <li><a href="../relatorios/RelLocomocao" target="_blank">Relatório de Locomoções</a>
 	      </ul>
 	    </li>
 	    <li> <a href= "${pageContext.request.contextPath}/Login.jsp">Sair</a></li>
